@@ -133,6 +133,7 @@ function TitanPanelRightClickMenu_PrepareHealBotMenu()
       HEALBOT_CLASSES_RANGES,
       HEALBOT_CLASSES_HEALERS,
       HEALBOT_CLASSES_CUSTOM,
+      HEALBOT_DEMONHUNTER,
       }
 
   HealBot_Titan_ExtraSort_List = {

@@ -19,6 +19,7 @@ HEALBOT_SHAMAN                          = "Shaman";
 HEALBOT_WARLOCK                         = "Warlock";
 HEALBOT_WARRIOR                         = "Warrior";
 HEALBOT_DEATHKNIGHT                     = "Death Knight";
+HEALBOT_DEMONHUNTER                     = "Demon Hunter";
 
 HEALBOT_SILK_BANDAGE                    = GetItemInfo(6450) or "Silk Bandage";
 HEALBOT_HEAVY_SILK_BANDAGE              = GetItemInfo(6451) or "Heavy Silk Bandage";
@@ -748,6 +749,9 @@ HEALBOT_DEMONOLOGY                      = "Demonology"
 HEALBOT_DESTRUCTION                     = "Destruction"
 HEALBOT_BLOOD                           = "Blood"
 HEALBOT_UNHOLY                          = "Unholy"
+HEALBOT_HAVOC                           = "Havoc"
+HEALBOT_VENGEANCE                       = "Vengeance"
+HEALBOT_DEVOURER                        = "Devourer"
 
 HEALBOT_OPTIONS_VISIBLERANGE            = "Disable bar when range over 100 yards"
 HEALBOT_OPTIONS_NOTIFY_HEAL_MSG         = "Heal Message"

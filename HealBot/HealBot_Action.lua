@@ -2413,6 +2413,8 @@ function HealBot_Action_ClassColour(hbGUID, unit)
             HealBot_ClassColR[hbGUID],HealBot_ClassColG[hbGUID],HealBot_ClassColB[hbGUID] = 0.58,0.51,0.79
         elseif strsub(class,1,4)=="DEAT" then
             HealBot_ClassColR[hbGUID],HealBot_ClassColG[hbGUID],HealBot_ClassColB[hbGUID] = 0.78,0.04,0.04
+        elseif strsub(class,1,4)=="DEMO" then
+            HealBot_ClassColR[hbGUID],HealBot_ClassColG[hbGUID],HealBot_ClassColB[hbGUID] = 0.64,0.19,0.79
         else
             HealBot_ClassColR[hbGUID],HealBot_ClassColG[hbGUID],HealBot_ClassColB[hbGUID] = 0.78,0.61,0.43
         end

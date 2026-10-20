@@ -19,6 +19,7 @@ HEALBOT_SHAMAN  = "Шаман";
 HEALBOT_WARLOCK = "Чернокнижник";
 HEALBOT_WARRIOR = "Воин";
 HEALBOT_DEATHKNIGHT = "Рыцарь cмерти";
+HEALBOT_DEMONHUNTER = "Охотник на демонов";
 
 HEALBOT_SILK_BANDAGE                 = GetItemInfo(6450) or "Шелковые бинты";
 HEALBOT_HEAVY_SILK_BANDAGE           = GetItemInfo(6451) or "Плотные шелковые бинты";
@@ -745,6 +746,9 @@ HEALBOT_DEMONOLOGY    = "Демонология"
 HEALBOT_DESTRUCTION   = "Разрушение"
 HEALBOT_BLOOD         = "Кровь"
 HEALBOT_UNHOLY        = "Нечестивость"
+HEALBOT_HAVOC         = "Истребление"
+HEALBOT_VENGEANCE     = "Месть"
+HEALBOT_DEVOURER      = "Пожиратель"
 
 HEALBOT_OPTIONS_VISIBLERANGE = "Отключать панель когда расстояние больше 100 метров"
 HEALBOT_OPTIONS_NOTIFY_HEAL_MSG  = "Сообщения о исцелении"

@@ -95,6 +95,10 @@ local HealBot_Ignore_Class_Debuffs = {
                           [HEALBOT_DEBUFF_CRIPPLE] = true,
                           [HEALBOT_DEBUFF_UNSTABLE_AFFL] = true,},
     ["DEAT"] = { [HEALBOT_DEBUFF_UNSTABLE_AFFL] = true,},
+    ["DEMO"] = { [HEALBOT_DEBUFF_ANCIENT_HYSTERIA] = true,
+                          [HEALBOT_DEBUFF_IGNITE_MANA] = true,
+                          [HEALBOT_DEBUFF_VIPER_STING] = true,
+                          [HEALBOT_DEBUFF_UNSTABLE_AFFL] = true,},
 };
 
 local HealBot_Ignore_Movement_Debuffs = {
@@ -1491,6 +1495,16 @@ function HealBot_OnEvent_VariablesLoaded(self)
             Healbot_Config_Skins[key] = val;
         end
     end);
+    for _,key in ipairs({"WatchHoT","HoTReserve"}) do
+        for class,val in pairs(HealBot_GlobalsDefaults[key]) do
+            if not HealBot_Globals[key][class] then HealBot_Globals[key][class] = val end
+        end
+    end
+    for _,key in ipairs({"EmergIncRange","EmergIncMelee","EmergIncHealers","EmergIncCustom"}) do
+        for class,val in pairs(HealBot_ConfigDefaults[key]) do
+            if not HealBot_Config[key][class] then HealBot_Config[key][class] = val end
+        end
+    end
     if HealBot_Config.HealBot_Enable_MouseWheel==1 then
         HealBot_Action:EnableMouseWheel(1)  
         HealBot_Action:SetScript("OnMouseWheel", function(self, delta)
@@ -1642,7 +1656,7 @@ end
 
 local hbClassHoTwatch={}
 function HealBot_configClassHoT(class, race)
-    hbClassHoTwatch=HealBot_Globals.WatchHoT[class]
+    hbClassHoTwatch=HealBot_Globals.WatchHoT[class] or {}
 
     if hbClassHoTwatch[HEALBOT_GUARDIAN_SPIRIT]==3 then
         HealBot_Watch_HoT[HEALBOT_GUARDIAN_SPIRIT]="A"
@@ -3365,7 +3379,7 @@ function HealBot_CheckUnitDebuffs(hbGUID)
                             checkthis=false;
                         elseif HealBot_Config.IgnoreClassDebuffs==1 then
                             HealBot_Ignore_Debuffs_Class=HealBot_Ignore_Class_Debuffs[strsub(DebuffClass,1,4)];
-                            if HealBot_Ignore_Debuffs_Class[dName] then
+                            if HealBot_Ignore_Debuffs_Class and HealBot_Ignore_Debuffs_Class[dName] then
                                 checkthis=false;
                             end
                         end
@@ -5525,8 +5539,9 @@ function HealBot_Update_Skins()
     
     local _,class=UnitClass("player")
     class=strsub(class,1,4)
-    local hbClassHoTwatchDef=HealBot_GlobalsDefaults.WatchHoT[class]
+    local hbClassHoTwatchDef=HealBot_GlobalsDefaults.WatchHoT[class] or {}
    -- hbClassHoTwatch=HealBot_Globals.WatchHoT[class]
+    if not HealBot_Globals.WatchHoT[class] then HealBot_Globals.WatchHoT[class]={} end
     
     for sName,x  in pairs(hbClassHoTwatchDef) do
         if not HealBot_Globals.WatchHoT[class][sName] then

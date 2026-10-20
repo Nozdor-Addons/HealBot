@@ -43,6 +43,7 @@ HealBot_Spec = {
     ["SHAM"] = { [1] = HEALBOT_ELEMENTAL,     [2] = HEALBOT_ENHANCEMENT,  [3] = HEALBOT_SHAMAN_RESTORATION, },
     ["WARL"] = { [1] = HEALBOT_AFFLICTION,    [2] = HEALBOT_DEMONOLOGY,   [3] = HEALBOT_DESTRUCTION, },
     ["DEAT"] = { [1] = HEALBOT_BLOOD,         [2] = HEALBOT_FROST,        [3] = HEALBOT_UNHOLY, },
+    ["DEMO"] = { [1] = HEALBOT_HAVOC,         [2] = HEALBOT_VENGEANCE,    [3] = HEALBOT_DEVOURER, },
     }
 end
 

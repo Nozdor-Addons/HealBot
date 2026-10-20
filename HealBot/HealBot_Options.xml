@@ -332,17 +332,17 @@
                     </Button>
 					<Frame name="HealBot_Options_EmergLFrame">
 						<Size>
-							<AbsDimension y="92"/>
+							<AbsDimension y="112"/>
 						</Size>
 						<Anchors>
 							<Anchor point="TOPLEFT">
 								<Offset>
-									<AbsDimension x="21" y="-410"/>
+									<AbsDimension x="21" y="-390"/>
 								</Offset>
 							</Anchor>
 							<Anchor point="TOPRIGHT">
 								<Offset>
-									<AbsDimension x="-21" y="410"/>
+									<AbsDimension x="-21" y="390"/>
 								</Offset>
 							</Anchor>
 						</Anchors>
@@ -511,6 +511,19 @@
 								</Anchors>
 								<Scripts>
 									<OnLoad>HealBot_Options_SetText(self,HEALBOT_WARRIOR)</OnLoad>
+									<OnClick>HealBot_Options_EFClass_OnClick(self)</OnClick>
+								</Scripts>
+							</CheckButton>
+							<CheckButton name="HealBot_Options_EFClassDemonHunter" inherits="SendMailRadioButtonTemplate" id="11">
+								<Anchors>
+									<Anchor point="TOPLEFT" relativeTo="HealBot_Options_EFClassHunter" relativePoint="BOTTOMLEFT">
+										<Offset>
+											<AbsDimension x="0" y="-5"/>
+										</Offset>
+									</Anchor>
+								</Anchors>
+								<Scripts>
+									<OnLoad>HealBot_Options_SetText(self,HEALBOT_DEMONHUNTER)</OnLoad>
 									<OnClick>HealBot_Options_EFClass_OnClick(self)</OnClick>
 								</Scripts>
 							</CheckButton>
